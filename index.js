@@ -35,7 +35,6 @@ $(document).ready(function(){
       $('#high-score').text(score);
     }
 
-
     var startGame = function () {
       if (!interval) {
         if (timeLeft === 0) {
@@ -52,23 +51,17 @@ $(document).ready(function(){
       }
     };
     
-
     var randomNumberGenerator = function (value) {
-     
     var number = Math.ceil(Math.random() * value);
       return number 
     };
     
-
     var questionGenerator = function () {
-      
       var question = {};
       var num1 = randomNumberGenerator(10);
       var num2 = randomNumberGenerator(10);
-    
       question.answer = num1 + num2;
       question.equation = String(num1)  + "+" +  String(num2);
-      
       return question;
     };
     
@@ -98,6 +91,7 @@ $(document).ready(function(){
       resetTimeLeft(10)
       resetScore(0);
       resetHighScore(0)
+      renderNewQuestion();
     });
   
     renderNewQuestion();
